@@ -1,5 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import { Providers } from './providers' // El archivo que creamos para el Dark Mode
+import { Analytics } from "@vercel/analytics/react" // Importación de analíticas
 
 export const metadata: Metadata = {
   title: 'SenderoByte | Siempre Listos',
@@ -12,8 +14,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <body>{children}</body>
+    // Agregamos suppressHydrationWarning para evitar errores de consola con los temas
+    <html lang="es" suppressHydrationWarning> 
+      <body>
+        <Providers>
+          {children}
+          {/* Esta es la variable/componente que rastrea tus visitas */}
+          <Analytics /> 
+        </Providers>
+      </body>
     </html>
   )
 }
