@@ -4,17 +4,24 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 10, 10, 10;
-  --background-end-rgb: 0, 0, 0;
-  --accent-color: #00ff66; /* Verde Neón SenderoByte */
+  --background-rgb: 26, 24, 22; /* El color #1a1816 de SenderoByte */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-rgb));
+  /* Eliminamos el gradiente viejo que venía por defecto en Next.js */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection para que cuando pintes texto se vea neón */
+::selection {
+  background-color: #00ff66;
+  color: #000;
 }
