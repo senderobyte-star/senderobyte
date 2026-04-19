@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Providers } from './providers' // El archivo que creamos para el Dark Mode
-import { Analytics } from "@vercel/analytics/react" // Importación de analíticas
+import { Analytics } from "@vercel/analytics/next" // Importación de analíticas
 
 export const metadata: Metadata = {
   title: 'SenderoByte | Siempre Listos',
